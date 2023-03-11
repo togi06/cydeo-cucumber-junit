@@ -45,7 +45,8 @@ public class VyTrackDDTTest {
         XSSFWorkbook workbook = new XSSFWorkbook(in);
         XSSFSheet sheet = workbook.getSheet("data");
 
-        for (int i = 0; i<=sheet.getLastRowNum(); i++){
+        for (int i = 1; i<=sheet.getLastRowNum(); i++){
+            loginPage.loginUser.clear();
             String userName= sheet.getRow(i).getCell(0).toString();
             String password = sheet.getRow(i).getCell(1).toString();
             String  firstName = sheet.getRow(i).getCell(2).toString();
@@ -53,7 +54,7 @@ public class VyTrackDDTTest {
 
             loginPage.login(userName,password);
 
-           BrowserUtils.sleep(5);
+           BrowserUtils.sleep(2);
             WebDriverWait wait = new WebDriverWait(Driver.getDriver(),30);
            // wait.until(ExpectedConditions.visibilityOf(dashboardPage.fullName));
             //WebElement loaderMask = Driver.getDriver().findElement(By.cssSelector("div[class='loader-mask-shown']"));

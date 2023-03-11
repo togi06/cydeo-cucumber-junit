@@ -45,6 +45,7 @@ public class DenemeTest {
 
 
         for (int i=1; i<=sheet.getLastRowNum(); i++){
+            loginPage.userName.clear(); //bunu sayesinde hepsi oldu !!!
             String userName = sheet.getRow(i).getCell(0).toString();
             String password = sheet.getRow(i).getCell(1).toString();
             String  firstName= sheet.getRow(i).getCell(2).toString();
